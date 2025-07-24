@@ -103,7 +103,6 @@
     "exec": "date '+%H:%M'",
     "interval": 1,
     "format": "󰅐 {}",
-    "on-click": "ghostty -e /home/stian/miniconda3/bin/calcure",
     "tooltip": false,
   },
 
