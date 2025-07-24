@@ -7,10 +7,7 @@
   "margin-left": 10,
   "margin-right": 10,
 
-  "modules-left": [
-    "hyprland/workspaces", 
-    "custom/window"
-  ],
+  "modules-left": ["hyprland/workspaces", "custom/window"],
 
   "modules-center": [],
 
@@ -27,12 +24,12 @@
     "custom/battery",
     "wireplumber",
     "bluetooth",
-    "tray"
+    "tray",
   ],
 
   "backlight": {
     "format": "󰖙 {percent}%",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "bluetooth": {
@@ -43,7 +40,7 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click": "blueman-manager"
+    "on-click": "blueman-manager",
   },
 
   "custom/battery": {
@@ -51,7 +48,7 @@
     "interval": 30,
     "format": "{}",
     "on-click": "gnome-power-statistics",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "custom/cpu": {
@@ -59,15 +56,15 @@
     "interval": 5,
     "format": "󰾆 {}",
     "on-click": "ghostty -e btop",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "custom/date": {
     "exec": "date '+%a %-d %b'",
     "interval": 60,
     "format": "󰃃 {}",
-    "on-click": "ghostty -e calcure",
-    "tooltip": false
+    "on-click": "ghostty -e /home/stian/miniconda3/bin/calcure",
+    "tooltip": false,
   },
 
   "custom/gpu": {
@@ -75,7 +72,7 @@
     "interval": 5,
     "format": "󰹑 {}",
     "on-click": "ghostty -e watch -n 1 ~/.config/hypr/waybar/nvidia-smi.py",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "custom/hyprsunset": {
@@ -83,7 +80,7 @@
     "signal": 10,
     "format": "󰖔 {}",
     "on-click": "~/.config/hypr/hyprland/hyprsunset.sh cycle",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "custom/network": {
@@ -91,7 +88,7 @@
     "interval": 5,
     "format": "{}",
     "on-click": "nm-connection-editor",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "custom/notifications": {
@@ -99,21 +96,21 @@
     "interval": 5,
     "format": "󰂜 {}",
     "on-click": "swaync-client -t",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "custom/time": {
     "exec": "date '+%H:%M'",
     "interval": 1,
     "format": "󰅐 {}",
-    "on-click": "ghostty -e calcure",
-    "tooltip": false
+    "on-click": "ghostty -e /home/stian/miniconda3/bin/calcure",
+    "tooltip": false,
   },
 
   "custom/window": {
     "exec": "~/.config/hypr/waybar/window.sh",
     "interval": 1,
-    "format": "{}"
+    "format": "{}",
   },
 
   "hyprland/workspaces": {
@@ -131,30 +128,30 @@
       "6": "6",
       "7": "7",
       "8": "8",
-      "9": "9"
+      "9": "9",
     },
     "persistent_workspaces": {
       "1": [],
       "2": [],
       "3": [],
-      "4": []
-    }
+      "4": [],
+    },
   },
 
   "memory": {
     "format": "󱇚 {used:0.1f}G",
     "on-click": "ghostty -e btop",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "tray": {
     "icon-size": 16,
-    "spacing": 15
+    "spacing": 15,
   },
 
   "wireplumber": {
     "format": "󰝚 {volume}%",
     "tooltip": false,
-    "on-click": "pavucontrol"
-  }
+    "on-click": "pavucontrol",
+  },
 }
