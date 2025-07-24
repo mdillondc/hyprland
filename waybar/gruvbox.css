@@ -1,0 +1,96 @@
+@define-color rosewater  #f2e5bc;
+@define-color flamingo   #ea6962;
+@define-color pink       #d3869b;
+@define-color mauve      #b16286;
+@define-color red        #cc241d;
+@define-color maroon     #9d0006;
+@define-color peach      #fe8019;
+@define-color yellow     #d79921;
+@define-color green      #98971a;
+@define-color teal       #689d6a;
+@define-color sky        #458588;
+@define-color blue       #83a598;
+@define-color lavender   #bdae93;
+@define-color text       #ebdbb2;
+@define-color subtext1   #d5c4a1;
+@define-color subtext0   #bdae93;
+@define-color overlay2   #a89984;
+@define-color overlay1   #928374;
+@define-color overlay0   #7c6f64;
+@define-color surface2   #665c54;
+@define-color surface1   #504945;
+@define-color surface0   #3c3836;
+@define-color base       rgb(39, 39, 39);
+@define-color baselight  #353535;
+@define-color mantle     #282828;
+@define-color crust      #1d2021;
+@define-color hyprborder #595959;
+
+* {
+    padding: 0;
+    font-family: "Noto Sans Mono";
+    font-size: 18px;
+}
+
+window#waybar {
+    background: alpha(@base, 0.65);
+    border-radius: 3px;
+    border: 1px solid alpha(@hyprborder, 0.4);
+    
+}
+
+tooltip {
+    background: @base;
+    border: 1px solid @blue;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 5px;
+}
+
+#backlight,
+#battery,
+#bluetooth,
+#cpu,
+#custom-battery,
+#custom-cpu,
+#custom-date,
+#custom-gpu,
+#custom-hyprsunset,
+#custom-icon,
+#custom-network,
+#custom-notifications,
+#custom-power,
+#custom-time,
+#custom-window,
+#memory,
+#network,
+#tray,
+#wireplumber,
+#workspaces {
+    color: @text;
+    padding: 3px 10px;
+    margin: 0 2px;
+    border-radius: 3px;
+    border: 1px solid @baselight;
+    background: alpha(@yellow, .035);
+}
+
+#custom-window {
+    border-color: alpha(@yellow, 0);
+    background: none;
+}
+
+#workspaces button {
+    color: @yellow;
+}
+
+#workspaces button.empty {
+    color: @surface2;
+}
+
+#workspaces button:hover {
+    /* opacity: 0.5; */
+}

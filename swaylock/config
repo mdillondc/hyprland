@@ -1,0 +1,37 @@
+# Background screenshot with effects
+screenshot
+effect-blur=7x5
+effect-vignette=0.5:0.5
+color=272727
+
+# Indicator settings
+clock
+indicator-radius=100
+indicator-thickness=1
+indicator-caps-lock
+indicator-idle-visible
+
+# Colors
+inside-color=272727CC
+ring-color=59595980
+text-color=ebdbb2
+text-clear-color=ebdbb2
+text-caps-lock-color=ebdbb2
+text-ver-color=ebdbb2
+text-wrong-color=ebdbb2
+line-color=00000000
+inside-clear-color=83a598CC
+ring-clear-color=83a59880
+inside-caps-lock-color=d79921CC
+ring-caps-lock-color=d7992180
+inside-ver-color=272727CC
+ring-ver-color=98971a80
+inside-wrong-color=272727CC
+ring-wrong-color=cc241d80
+key-hl-color=98971aCC
+
+# Behavior
+show-failed-attempts
+daemonize
+ignore-empty-password
+fade-in=0.75

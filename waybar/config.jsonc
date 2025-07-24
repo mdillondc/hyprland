@@ -1,0 +1,160 @@
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": 4,
+  "margin-top": 5,
+  "margin-bottom": 0,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "modules-left": [
+    "hyprland/workspaces", 
+    "custom/window"
+  ],
+
+  "modules-center": [],
+
+  "modules-right": [
+    "custom/time",
+    "custom/date",
+    "custom/notifications",
+    "custom/hyprsunset",
+    "custom/cpu",
+    "custom/gpu",
+    "memory",
+    "custom/network",
+    "backlight",
+    "custom/battery",
+    "wireplumber",
+    "bluetooth",
+    "tray"
+  ],
+
+  "backlight": {
+    "format": "󰖙 {percent}%",
+    "tooltip": false
+  },
+
+  "bluetooth": {
+    "format": "󰂰 {status}",
+    "format-connected": "󰂰 {device_alias}",
+    "format-connected-battery": "󰂰 {device_alias} ({device_battery_percentage}%)",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "blueman-manager"
+  },
+
+  "custom/battery": {
+    "exec": "~/.config/hypr/waybar/battery.sh",
+    "interval": 30,
+    "format": "{}",
+    "on-click": "gnome-power-statistics",
+    "tooltip": false
+  },
+
+  "custom/cpu": {
+    "exec": "~/.config/hypr/waybar/cpu.sh",
+    "interval": 5,
+    "format": "󰾆 {}",
+    "on-click": "ghostty -e btop",
+    "tooltip": false
+  },
+
+  "custom/date": {
+    "exec": "date '+%a %-d %b'",
+    "interval": 60,
+    "format": "󰃃 {}",
+    "on-click": "ghostty -e calcure",
+    "tooltip": false
+  },
+
+  "custom/gpu": {
+    "exec": "~/.config/hypr/waybar/gpu.sh",
+    "interval": 5,
+    "format": "󰹑 {}",
+    "on-click": "ghostty -e watch -n 1 ~/.config/hypr/waybar/nvidia-smi.py",
+    "tooltip": false
+  },
+
+  "custom/hyprsunset": {
+    "exec": "~/.config/hypr/hyprland/hyprsunset.sh status | grep 'Current temperature' | cut -d':' -f2 | xargs || echo 'Off'",
+    "signal": 10,
+    "format": "󰖔 {}",
+    "on-click": "~/.config/hypr/hyprland/hyprsunset.sh cycle",
+    "tooltip": false
+  },
+
+  "custom/network": {
+    "exec": "~/.config/hypr/waybar/network.sh",
+    "interval": 5,
+    "format": "{}",
+    "on-click": "nm-connection-editor",
+    "tooltip": false
+  },
+
+  "custom/notifications": {
+    "exec": "~/.config/hypr/waybar/notifications.sh",
+    "interval": 5,
+    "format": "󰂜 {}",
+    "on-click": "swaync-client -t",
+    "tooltip": false
+  },
+
+  "custom/time": {
+    "exec": "date '+%H:%M'",
+    "interval": 1,
+    "format": "󰅐 {}",
+    "on-click": "ghostty -e calcure",
+    "tooltip": false
+  },
+
+  "custom/window": {
+    "exec": "~/.config/hypr/waybar/window.sh",
+    "interval": 1,
+    "format": "{}"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "sort-by-number": true,
+    "format-icons": {
+      "active": "●",
+      "urgent": "!",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9"
+    },
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+
+  "memory": {
+    "format": "󱇚 {used:0.1f}G",
+    "on-click": "ghostty -e btop",
+    "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 15
+  },
+
+  "wireplumber": {
+    "format": "󰝚 {volume}%",
+    "tooltip": false,
+    "on-click": "pavucontrol"
+  }
+}
