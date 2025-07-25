@@ -41,6 +41,12 @@ yay -S walker-bin libqalculate
 
 # Fonts
 yay -S ttf-nerd-fonts-symbols-mono
+
+# Overkill Nerd Fonts
+git clone https://github.com/ryanoasis/nerd-fonts.git
+cd nerd-fonts
+chmod +x install.sh
+bash install.sh
 ```
 
 ## Usage
