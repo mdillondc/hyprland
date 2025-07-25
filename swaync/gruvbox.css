@@ -12,7 +12,6 @@
     color: #ebdbb2;
     padding: 0;
     opacity: 0.8;
-    backdrop-filter: blur(10px);
 }
 
 .floating-notifications.background
@@ -142,7 +141,6 @@
     color: #ebdbb2;
     padding: 14px;
     opacity: 0.8;
-    backdrop-filter: blur(10px);
 }
 
 .control-center .widget-title {
