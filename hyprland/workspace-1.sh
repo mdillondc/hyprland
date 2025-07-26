@@ -182,4 +182,6 @@ else
     echo "Could not arrange windows - some applications did not start properly"
 fi
 
+hyprctl dispatch workspace 2
+
 echo "Workspace 1 dwindle layout setup complete"
