@@ -12,8 +12,7 @@
   "modules-center": [],
 
   "modules-right": [
-    "custom/time",
-    "custom/date",
+    "tray",
     "custom/notifications",
     "custom/hyprsunset",
     "custom/cpu",
@@ -24,7 +23,8 @@
     "custom/battery",
     "wireplumber",
     "bluetooth",
-    "tray",
+    "custom/date",
+    "custom/time"
   ],
 
   "backlight": {
