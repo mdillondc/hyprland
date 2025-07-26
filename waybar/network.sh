@@ -36,28 +36,51 @@ get_network_speeds() {
             local tx_speed=$(( (current_tx - prev_tx) / time_diff ))
 
             # Convert to MB/s (divide by 1024*1024)
-            local rx_mb=$(echo "scale=2; $rx_speed / 1048576" | bc 2>/dev/null || echo "0.00")
-            local tx_mb=$(echo "scale=2; $tx_speed / 1048576" | bc 2>/dev/null || echo "0.00")
+            local rx_mb=$(echo "scale=1; $rx_speed / 1048576" | bc 2>/dev/null || echo "0.0")
+            local tx_mb=$(echo "scale=1; $tx_speed / 1048576" | bc 2>/dev/null || echo "0.0")
+
+            # Format with conditional decimals
+            if (( $(echo "$rx_mb > 9.9" | bc -l) )); then
+                local rx_mb_int=$(echo "$rx_mb / 1" | bc 2>/dev/null || echo "0")
+                if [[ "$rx_mb_int" -lt 10 ]]; then
+                    rx_display=$(printf "%02d" "$rx_mb_int")
+                else
+                    rx_display=$(printf "%d" "$rx_mb_int")
+                fi
+            else
+                rx_display=$(printf "%.1f" "$rx_mb")
+            fi
+
+            if (( $(echo "$tx_mb > 9.9" | bc -l) )); then
+                local tx_mb_int=$(echo "$tx_mb / 1" | bc 2>/dev/null || echo "0")
+                if [[ "$tx_mb_int" -lt 10 ]]; then
+                    tx_display=$(printf "%02d" "$tx_mb_int")
+                else
+                    tx_display=$(printf "%d" "$tx_mb_int")
+                fi
+            else
+                tx_display=$(printf "%.1f" "$tx_mb")
+            fi
         else
-            local rx_mb="0.00"
-            local tx_mb="0.00"
+            rx_display="0.0"
+            tx_display="0.0"
         fi
     else
         # First run, no previous data
-        local rx_mb="0.00"
-        local tx_mb="0.00"
+        rx_display="0.0"
+        tx_display="0.0"
     fi
 
     # Store current stats for next run
     echo "$current_time $current_rx $current_tx" > "$cache_file"
 
-    echo "$rx_mb $tx_mb"
+    echo "$rx_display $tx_display"
 }
 
 # Main execution
 interface=$(get_network_interface)
 speeds=$(get_network_speeds "$interface")
-rx_mb=$(echo "$speeds" | cut -d' ' -f1)
-tx_mb=$(echo "$speeds" | cut -d' ' -f2)
+rx_display=$(echo "$speeds" | cut -d' ' -f1)
+tx_display=$(echo "$speeds" | cut -d' ' -f2)
 
-echo "󰁅 ${rx_mb} 󰁝 ${tx_mb}"
+echo "󰁅 ${rx_display} 󰁝 ${tx_display}"
