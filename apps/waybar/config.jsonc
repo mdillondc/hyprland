@@ -23,7 +23,8 @@
     "custom/battery",
     "bluetooth",
     "wireplumber",
-    "custom/date",
+    //"custom/date",
+    "clock",
     "custom/time",
   ],
 
@@ -41,6 +42,28 @@
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     "on-click": "blueman-manager",
+  },
+  
+  // Alternative to custom/date in order to display calendar in tooltip
+  "clock": {
+    "format": "󰃃 {:%a %d %b}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#d79921'><b>{}</b></span>",
+        "days": "<span color='#ebdbb2'>{}</span>",
+        "weekdays": "<span color='#fabd2f'><b>{}</b></span>",
+        "today": "<span color='#d79921'><b><u>{}</u></b></span>",
+      },
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down",
+    },
   },
 
   "custom/battery": {
