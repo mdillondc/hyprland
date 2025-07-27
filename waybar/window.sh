@@ -14,9 +14,9 @@ get_max_length() {
     if [[ $width -ge 3840 ]]; then
         echo 150  # Ultrawide
     elif [[ $width -ge 2560 ]]; then
-        echo 80  # Higher than standard
+        echo 70  # Higher than standard
     else
-        echo 50  # Standard/laptop (< standard)
+        echo 30  # Standard/laptop (< standard)
     fi
 }
 
