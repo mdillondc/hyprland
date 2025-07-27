@@ -26,7 +26,7 @@ APP_4="messages"
 declare -A APP_COMMANDS=(
     ["mocp"]="ghostty --title=mocp -e mocp"
     ["pamix"]="ghostty --title=pamix -e pamix"
-    ["easyeffects"]="flatpak run com.github.wwmm.easyeffects"
+    ["easyeffects"]="/usr/bin/easyeffects"
     ["messages"]="chromium --ozone-platform=wayland --enable-features=UseOzonePlaform --app=https://messages.google.com/web --disable-infobars"
 )
 

@@ -63,7 +63,7 @@
     "exec": "date '+%a %-d %b'",
     "interval": 60,
     "format": "󰃃 {}",
-    "on-click": "ghostty -e /home/stian/miniconda3/bin/calcure",
+    "on-click": "ghostty -e calcure",
     "tooltip": false,
   },
 
