@@ -24,7 +24,7 @@
     "bluetooth",
     "wireplumber",
     "custom/date",
-    "custom/time"
+    "custom/time",
   ],
 
   "backlight": {
@@ -44,7 +44,7 @@
   },
 
   "custom/battery": {
-    "exec": "~/.config/hypr/waybar/battery.sh",
+    "exec": "~/.config/hypr/apps/waybar/modules/battery.sh",
     "interval": 30,
     "format": "{}",
     "on-click": "gnome-power-statistics",
@@ -52,7 +52,7 @@
   },
 
   "custom/cpu": {
-    "exec": "~/.config/hypr/waybar/cpu.sh",
+    "exec": "~/.config/hypr/apps/waybar/modules/cpu.sh",
     "interval": 5,
     "format": "󰾆 {}",
     "on-click": "ghostty -e btop",
@@ -68,23 +68,23 @@
   },
 
   "custom/gpu": {
-    "exec": "~/.config/hypr/waybar/gpu.sh",
+    "exec": "~/.config/hypr/apps/waybar/modules/gpu.sh",
     "interval": 5,
     "format": "󰹑 {}",
-    "on-click": "ghostty -e watch -n 1 ~/.config/hypr/waybar/nvidia-smi.py",
+    "on-click": "ghostty -e watch -n 1 ~/.config/hypr/apps/waybar/modules/nvidia-smi.py",
     "tooltip": false,
   },
 
   "custom/hyprsunset": {
-    "exec": "~/.config/hypr/hyprland/hyprsunset.sh status | grep 'Current temperature' | cut -d':' -f2 | xargs || echo 'Off'",
+    "exec": "~/.config/hypr/scripts/system/hyprsunset.sh status | grep 'Current temperature' | cut -d':' -f2 | xargs || echo 'Off'",
     "signal": 10,
     "format": "󰖔 {}",
-    "on-click": "~/.config/hypr/hyprland/hyprsunset.sh cycle",
+    "on-click": "~/.config/hypr/scripts/system/hyprsunset.sh cycle",
     "tooltip": false,
   },
 
   "custom/network": {
-    "exec": "~/.config/hypr/waybar/network.sh",
+    "exec": "~/.config/hypr/apps/waybar/modules/network.sh",
     "interval": 5,
     "format": "{}",
     "on-click": "nm-connection-editor",
@@ -92,7 +92,7 @@
   },
 
   "custom/notifications": {
-    "exec": "~/.config/hypr/waybar/notifications.sh",
+    "exec": "~/.config/hypr/apps/waybar/modules/notifications.sh",
     "interval": 5,
     "format": "󰂜 {}",
     "on-click": "swaync-client -t",
@@ -107,7 +107,7 @@
   },
 
   "custom/window": {
-    "exec": "~/.config/hypr/waybar/window.sh",
+    "exec": "~/.config/hypr/apps/waybar/modules/window.sh",
     "interval": 1,
     "format": "{}",
   },
