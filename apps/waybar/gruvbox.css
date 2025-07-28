@@ -39,7 +39,7 @@ window#waybar {
 }
 
 tooltip {
-    background: $base;
+    background: @base;
 }
 
 tooltip label {
