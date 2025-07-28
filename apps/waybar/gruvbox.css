@@ -20,7 +20,7 @@
 @define-color surface2   #665c54;
 @define-color surface1   #504945;
 @define-color surface0   #3c3836;
-@define-color base       rgb(39, 39, 39);
+@define-color base       #272727;
 @define-color baselight  #353535;
 @define-color mantle     #282828;
 @define-color crust      #1d2021;
