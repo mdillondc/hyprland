@@ -21,7 +21,12 @@ else
 
     sleep 0.2  # Small delay for window to be properly focused
 
-    # Move window left 3 times
+    # Move window left many times
+    hyprctl dispatch movewindow l
+    hyprctl dispatch movewindow l
+    hyprctl dispatch movewindow l
+    hyprctl dispatch movewindow l
+    hyprctl dispatch movewindow l
     hyprctl dispatch movewindow l
     hyprctl dispatch movewindow l
     hyprctl dispatch movewindow l
