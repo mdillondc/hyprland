@@ -12,7 +12,7 @@ set -euo pipefail
 # Configuration
 DEFAULT_RESIZE_PIXELS=80
 
-DEBUG=true  # Enable debug output
+DEBUG=false  # Enable debug output
 
 # Timing function for performance debugging
 get_timestamp() {
@@ -89,11 +89,7 @@ check_dependency "hyprctl" "hyprland"
 check_dependency "dotool" "dotool"
 
 
-# Check if user is in input group for dotool
-if ! groups | grep -q input; then
-    echo "Warning: You may need to be in the 'input' group to use dotool"
-    echo "Run: sudo usermod -a -G input \$USER && reboot"
-fi
+
 
 # Get active window information (simplified - just for validation)
 get_active_window_info() {
@@ -156,7 +152,7 @@ simulate_mouse_resize() {
     fi
     local cursor_start
     cursor_start=$(get_timestamp)
-    hyprctl dispatch movecursortocorner "$corner"
+    hyprctl dispatch movecursortocorner "$corner" > /dev/null 2>&1
     debug_time "movecursortocorner" "$cursor_start"
 
     # Use dotool for all input simulation
@@ -202,8 +198,6 @@ main() {
     local script_start
     script_start=$(get_timestamp)
 
-    echo "Smart resize: $ACTION $DIRECTION by ${RESIZE_PIXELS}px"
-
     if [[ "$DEBUG" == "true" ]]; then
         echo "DEBUG MODE: Enabled"
         echo "Script parameters: action=$ACTION, direction=$DIRECTION, pixels=$RESIZE_PIXELS"
@@ -224,8 +218,6 @@ main() {
     rel_drag=$(calculate_relative_drag "$ACTION" "$DIRECTION" "$RESIZE_PIXELS")
     read -r rel_x rel_y <<< "$rel_drag"
 
-    echo "Resizing window: $ACTION $DIRECTION by ${RESIZE_PIXELS}px"
-
     if [[ "$DEBUG" == "true" ]]; then
         echo "Relative drag: x=$rel_x, y=$rel_y"
     fi
@@ -240,7 +232,6 @@ main() {
     debug_time "resize simulation" "$resize_start"
 
     debug_time "total script execution" "$script_start"
-    echo "Resize complete!"
 }
 
 # Run main function
