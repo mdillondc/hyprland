@@ -26,3 +26,5 @@ if [[ "$HOSTNAME" == *"desktop"* ]]; then
     # We run it in the background so this script can exit successfully.
     hyprlock &
 fi
+
+bash ~/.config/hypr/scripts/theme/set-wallpaper.sh
