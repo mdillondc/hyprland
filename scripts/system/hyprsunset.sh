@@ -3,8 +3,8 @@
 # Usage: ./hyprsunset-cycle.sh [cycle|status|off]
 
 # Configuration
-TEMPERATURES=("identity" "temperature 2000" "temperature 3500")
-TEMPERATURE_NAMES=("Off" "2000K" "3500K")
+TEMPERATURES=("identity" "temperature 3500" "temperature 2000")
+TEMPERATURE_NAMES=("Off" "3500K" "2000K")
 STATE_FILE="/tmp/hyprsunset.state"
 
 # Function to read current temperature index from state file
