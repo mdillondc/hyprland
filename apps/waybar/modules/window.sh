@@ -16,7 +16,7 @@ get_max_length() {
     elif [[ $width -ge 2560 ]]; then
         echo 70  # Higher than standard
     else
-        echo 30  # Standard/laptop (< standard)
+        echo 20  # Standard/laptop (< standard)
     fi
 }
 
