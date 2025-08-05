@@ -2,7 +2,7 @@
 
 # Directory containing wallpapers
 WALLPAPER_DIR="$HOME/Sync/wallpapers/huge"
-HYPRPAPER_CONF="$HOME/.config/hypr/config/hyprpaper.conf"
+HYPRPAPER_CONF="$HOME/.config/hypr/conf/hyprpaper.conf"
 
 # Check if wallpaper directory exists
 if [[ ! -d "$WALLPAPER_DIR" ]]; then
@@ -53,7 +53,7 @@ fi
 
 # Start hyprpaper with new configuration
 echo "Starting hyprpaper..."
-hyprpaper -c ~/.config/hypr/config/hyprpaper.conf &
+hyprpaper -c ~/.config/hypr/conf/hyprpaper.conf &
 
 # Give it a moment to start
 sleep 0.5
